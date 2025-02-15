@@ -11,9 +11,16 @@ const Footer = () => {
         <div>
           <img src={assets.footer} className="mb-5 w-32" alt="footer_img" />
           <p className="text-gray-600">
-            The brand has a deep understanding of ancient designs along with
-            traditional crafts, and it perfectly brings them together in a
-            contemporary design aesthetic.
+            At Rohit Rao, we believe in weaving dreams into reality with
+            handcrafted elegance. Founded by Muskan, a zoology enthusiast, and
+            Rohit, an engineer turned designer, the brand is a seamless blend of
+            passion and precision. Our niche lies in crafting exquisite ethnic
+            wear, specializing in embroidered lehengas, suits, and sarees that
+            celebrate timeless traditions with a modern flair. Every piece we
+            create reflects our dedication to artistry, quality, and
+            personalization, making your special moments even more
+            extraordinary. Driven by a shared dream, we are committed to
+            redefining ethnic fashion while staying true to its cultural roots.
           </p>
           <Link to="/about">
             <p className="text-blue-500 hover:underline mt-2">Read more...</p>
@@ -47,7 +54,7 @@ const Footer = () => {
               <li className="hover:underline">Return & Exchanges</li>
             </Link>
             <Link to="/terms-conditions">
-              <li className="hover:underline">Terms & Conditions</li>
+              <li className="hover:underline">Terms & Conditions & Privacy Policy</li>
             </Link>
           </ul>
         </div>
