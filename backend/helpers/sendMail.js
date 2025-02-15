@@ -1,11 +1,13 @@
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+dotenv.config();
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   secure: true, // true for port 465, false for other ports
   auth: {
-    user: "labelrohitrao@gmail.com",
-    pass: "gqcuzgqpuudxuwht",
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
@@ -13,7 +15,7 @@ const transporter = nodemailer.createTransport({
 async function sendMail(to, subject, text, html) {
   // send mail with defined transport object
   const info = await transporter.sendMail({
-    from: 'labelrohitrao@gmail.com', // sender address
+    from: "labelrohitrao@gmail.com", // sender address
     to,
     subject,
     text,
