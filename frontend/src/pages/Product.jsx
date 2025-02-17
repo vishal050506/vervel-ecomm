@@ -130,9 +130,30 @@ const Product = () => {
           </div>
           <hr className="mt-8 mb-3 sm:w-4/5" />
           <p className="text-lg text-gray-800">Description</p>
-          <p className="mt-5 text-gray-700 md:w-4/5">
-            {productData.description}
-          </p>
+          <div className="mt-5 text-gray-800 md:w-4/5">
+            {productData.description &&
+            typeof productData.description === "string" ? (
+              (() => {
+                try {
+                  const desc = JSON.parse(productData.description);
+                  return (
+                    <>
+                      {desc.tagline && <p>{desc.tagline}</p>}
+                      {desc.fabric && <p>{desc.fabric}</p>}
+                      {desc.color && <p>{desc.color}</p>}
+                      {desc.components && <p>{desc.components}</p>}
+                      {desc.customization && <p>{desc.customization}</p>}
+                      {desc.additionalnote && <p>{desc.additionalnote}</p>}
+                    </>
+                  );
+                } catch (error) {
+                  return <p>{productData.description}</p>;
+                }
+              })()
+            ) : (
+              <p>{productData.description}</p>
+            )}
+          </div>
         </div>
       </div>
       {/* Size Guide Pop-up */}
@@ -183,8 +204,7 @@ const Product = () => {
                 This product is <b>made to order</b>.
               </li>
               <li>
-                Select sizes may be ready to ship. Contact us on <b>WhatsApp</b>{" "}
-                for urgent delivery inquiries.
+                Contact us on <b>WhatsApp</b> for urgent delivery inquiries.
               </li>
               <li>
                 <b>Fabric colors</b> may vary slightly due to photographic

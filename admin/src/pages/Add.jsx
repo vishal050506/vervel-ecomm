@@ -11,7 +11,14 @@ const Add = ({ token }) => {
   const [image4, setImage4] = useState(false);
 
   const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState({
+    tagline: "",
+    fabric: "",
+    color: "",
+    components: "",
+    customization: "",
+    additionalnote: "",
+  });
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("Suits");
   const [bestseller, setBestseller] = useState(false);
@@ -22,7 +29,7 @@ const Add = ({ token }) => {
     try {
       const formData = new FormData();
       formData.append("name", name);
-      formData.append("description", description);
+      formData.append("description", JSON.stringify(description));
       formData.append("price", price);
       formData.append("category", category);
       formData.append("bestseller", bestseller);
@@ -42,7 +49,14 @@ const Add = ({ token }) => {
       if (response.data.success) {
         toast.success(response.data.message);
         setName("");
-        setDescription("");
+        setDescription({
+          tagline: "",
+          fabric: "",
+          color: "",
+          components: "",
+          customization: "",
+          additionalnote: "",
+        });
         setPrice("");
         setImage1(false);
         setImage2(false);
@@ -132,14 +146,60 @@ const Add = ({ token }) => {
         />
       </div>
 
-      <div className="w-full">
+      <div className="w-full ">
         <p className="mb-2">Product Description</p>
+        <input
+          type="text"
+          value={description.tagline}
+          onChange={(e) =>
+            setDescription({ ...description, tagline: e.target.value })
+          }
+          placeholder="tagline...."
+          className="w-full px-3 py-2 border rounded mb-3"
+        />
+        <input
+          type="text"
+          value={description.fabric}
+          onChange={(e) =>
+            setDescription({ ...description, fabric: e.target.value })
+          }
+          placeholder="fabric.... "
+          className="w-full px-3 py-2 border rounded mb-3"
+        />
+        <input
+          type="text"
+          value={description.color}
+          onChange={(e) =>
+            setDescription({ ...description, color: e.target.value })
+          }
+          placeholder="color..."
+          className="w-full px-3 py-2 border rounded mb-3"
+        />
+        <input
+          type="text"
+          value={description.components}
+          onChange={(e) =>
+            setDescription({ ...description, components: e.target.value })
+          }
+          placeholder="components.... "
+          className="w-full px-3 py-2 border rounded mb-3"
+        />
+        <input
+          type="text"
+          value={description.customization}
+          onChange={(e) =>
+            setDescription({ ...description, customization: e.target.value })
+          }
+          placeholder="customization..."
+          className="w-full px-3 py-2 border rounded mb-3"
+        />
         <textarea
-          onChange={(e) => setDescription(e.target.value)}
-          value={description}
-          required
-          placeholder="Write content here"
-          className="w-full max-w-[500px] px-3 py-2"
+          value={description.additionalnote}
+          placeholder="Additional comments...."
+          onChange={(e) =>
+            setDescription({ ...description, additionalnote: e.target.value })
+          }
+          className="w-full px-3 py-2 border rounded bg-gray-100 "
         />
       </div>
 

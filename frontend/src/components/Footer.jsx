@@ -64,7 +64,14 @@ const Footer = () => {
           <p className="text-xl font-medium my-5">GET IN TOUCH</p>
           <ul className="flex flex-col gap-1 text-gray-600">
             <li>+91 9599335100</li>
-            <li>info@rohitraolabel.com</li>
+            <li>
+              <a
+                href="mailto:info@rohitraolabel.com"
+                className="hover:underline"
+              >
+                info@rohitraolabel.com
+              </a>
+            </li>
             <a
               href="https://www.instagram.com/labelrohitrao/?igsh=aXhkcmk0Ym43cnpj&utm_source=qr"
               target="_blank"
