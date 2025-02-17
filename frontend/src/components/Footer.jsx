@@ -54,7 +54,7 @@ const Footer = () => {
               <li className="hover:underline">Return & Exchanges</li>
             </Link>
             <Link to="/terms-conditions">
-              <li className="hover:underline">Terms & Conditions & Privacy Policy</li>
+              <li className="hover:underline">Terms & Conditions</li>
             </Link>
           </ul>
         </div>
@@ -64,7 +64,7 @@ const Footer = () => {
           <p className="text-xl font-medium my-5">GET IN TOUCH</p>
           <ul className="flex flex-col gap-1 text-gray-600">
             <li>+91 9599335100</li>
-            <li>labelrohitrao@gmail.com</li>
+            <li>info@rohitraolabel.com</li>
             <a
               href="https://www.instagram.com/labelrohitrao/?igsh=aXhkcmk0Ym43cnpj&utm_source=qr"
               target="_blank"
@@ -81,7 +81,7 @@ const Footer = () => {
       <div>
         <hr />
         <p className="py-5 text-sm text-center">
-          Copyright 2024 © RohitRao.com - All Rights Reserved.
+          Copyright 2025 © RohitRaoLabel.com - All Rights Reserved.
         </p>
       </div>
     </div>

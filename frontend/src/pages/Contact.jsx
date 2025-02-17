@@ -26,7 +26,7 @@ const Contact = () => {
           <p className="text-gray-500">
             Call / WhatsApp: (+91) 95993-35100
             <br />
-            E-mail: labelrohitrao@gmail.com
+            E-mail: info@rohitraolabel.com
           </p>
         </div>
       </div>

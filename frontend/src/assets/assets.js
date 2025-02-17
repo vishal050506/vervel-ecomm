@@ -53,7 +53,7 @@ import p_img49 from "./p_img49.png";
 import p_img50 from "./p_img50.png";
 import p_img51 from "./p_img51.png";
 import p_img52 from "./p_img52.png";
-import size_guide_image from "./size_guide_image.png";
+import size_guide_image from "./size_guide_image.jpeg";
 import paypal_logo from "./paypal_logo.png";
 import logo from "./logo.png";
 import footer from "./Footer.png";

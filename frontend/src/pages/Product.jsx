@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { useParams } from "react-router-dom";
 import { assets } from "../assets/assets";
+import { FaWhatsapp, FaTruck } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import RelatedProducts from "../components/RelatedProducts";
 
 const Product = () => {
@@ -11,6 +13,7 @@ const Product = () => {
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
   const [showSizeGuide, setShowSizeGuide] = useState(false); // State for size guide pop-up
+  const [activeTab, setActiveTab] = useState("description");
 
   const fetchProductData = () => {
     const product = products.find((item) => item._id === productId);
@@ -60,13 +63,14 @@ const Product = () => {
             />
             {/* <p className="pl-2">(122)</p> */}
           </div>
-          <p className="mt-5 text-3xl font-medium">
+          <p className="mt-5 mb-1 text-3xl font-medium">
             {currency}
             {productData.price}
           </p>
-          <p className="mt-5 text-gray-500 md:w-4/5">
-            {productData.description}
+          <p className="text-sm text-gray-400 font-semibold">
+            (Inclusive of all taxes)
           </p>
+
           <div className="flex flex-col gap-4 my-8">
             <div className="flex items-center justify-between">
               <p className="text-lg font-medium">Select Size</p>
@@ -95,23 +99,46 @@ const Product = () => {
 
           <button
             onClick={() => addToCart(productData._id, size)}
-            className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700"
+            className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700 mb-5"
           >
             ADD TO CART
           </button>
-          <hr className="mt-8 sm:w-4/5" />
-          <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
-            <p>100% Original Product</p>
-            <p>Enhance product pages for customization.</p>
-            <p>Prepaid payment options ensure seamless and secure shopping.</p>
+          <div className="flex flex-col gap-4  ">
+            <h3 className="text-sm ">Contact us For Product Related Query</h3>
+
+            {/* WhatsApp Contact */}
+            <div className="flex items-center gap-3">
+              <FaWhatsapp className="text-lg" />
+              <span className="text-sm">Text or WhatsApp</span>
+            </div>
+            <p className="pl-7 text-sm">+91 9599335100</p>
+
+            {/* Email Contact */}
+            <div className="flex items-center gap-3">
+              <MdEmail className="text-lg" />
+              <span className="text-sm">Email Us</span>
+            </div>
+            <p className="pl-7 text-sm">info@rohitraolabel.com</p>
+
+            {/* Shipping Info */}
+            <div className="flex items-center gap-3">
+              <FaTruck className="text-lg" />
+              <span className="text-sm">
+                Hand Made and Shipped within 4 to 6 weeks
+              </span>
+            </div>
           </div>
+          <hr className="mt-8 mb-3 sm:w-4/5" />
+          <p className="text-lg text-gray-800">Description</p>
+          <p className="mt-5 text-gray-700 md:w-4/5">
+            {productData.description}
+          </p>
         </div>
       </div>
-
       {/* Size Guide Pop-up */}
       {showSizeGuide && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-md shadow-lg max-w-lg w-full relative">
+          <div className="bg-white p-6 rounded-md shadow-lg max-w-2xl w-full relative">
             <button
               onClick={() => setShowSizeGuide(false)}
               className="absolute top-2 right-2 text-gray-500 hover:text-black"
@@ -126,36 +153,76 @@ const Product = () => {
           </div>
         </div>
       )}
-
       {/* Description & Review Section */}
       <div className="mt-20">
         <div className="flex">
-          <p className="border px-5 py-3 text-sm">Description</p>
-          {/* <p className="border px-5 py-3 text-sm">Reviews (122)</p> */}
-        </div>
-        <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-600">
-          <p className="font-medium">
-            At <b>ROHIT RAO</b>, we are committed to delivering
-            <b>unmatched quality, innovation, and reliability</b> in every
-            product we offer. Our mission is to enhance your lifestyle with
-            thoughtfully designed, high-performance products that combine
-            elegance with durability.
+          <p
+            className={`border px-5 py-3 text-sm cursor-pointer ${
+              activeTab === "description" ? "font-bold" : ""
+            }`}
+            onClick={() => setActiveTab("description")}
+          >
+            Additional Description
           </p>
-          <p className="font-medium">
-            Each product undergoes rigorous quality control, ensuring
-            <b>premium craftsmanship and lasting excellence</b>. Trusted by
-            thousands of satisfied customers, we take pride in offering products
-            that exceed expectations, backed by a commitment to customer
-            satisfaction and excellence.
-          </p>
-          <p className="font-medium">
-            <b>Experience the perfect blend of style, function, and trust.</b>
-            With our unwavering dedication to quality and service, your
-            confidence in our brand is our greatest achievement.
+          <p
+            className={`border px-5 py-3 text-sm cursor-pointer ${
+              activeTab === "shipping" ? "font-bold" : ""
+            }`}
+            onClick={() => setActiveTab("shipping")}
+          >
+            Shipping & Delivery
           </p>
         </div>
+        {activeTab === "description" && (
+          <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-600">
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                <b>Care Instructions:</b> Dry Clean Only.
+              </li>
+              <li>
+                This product is <b>made to order</b>.
+              </li>
+              <li>
+                Select sizes may be ready to ship. Contact us on <b>WhatsApp</b>{" "}
+                for urgent delivery inquiries.
+              </li>
+              <li>
+                <b>Fabric colors</b> may vary slightly due to photographic
+                lighting and screen settings.
+              </li>
+              <li>
+                Handmade weaves may have natural variations, including slubs or
+                minor weaving irregularities.
+              </li>
+              <li>
+                <b>No order cancellations or rejections</b> will be accepted
+                after placing an order.
+              </li>
+            </ul>
+          </div>
+        )}
+        {activeTab === "shipping" && (
+          <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-600 ">
+            <p className="text-sm ">
+              We proudly offer worldwide shipping. For all orders within India,
+              shipping is completely free, as we cover all domestic shipping
+              costs. However, international shipping charges apply and will be
+              calculated based on the product's weight, volume, and destination
+              country. Exact shipping costs will be provided upon inquiry.
+            </p>
+            <p className="text-sm">
+              For international orders, some countries may impose import duties
+              and taxes upon arrival. While most shipments do not incur these
+              additional fees, customs regulations vary, and we are unable to
+              predict the exact charges. If any customs duties or taxes are
+              applied, the customer is responsible for settling them. Rohit Rao
+              Label is not liable for non-delivery of orders if these duties and
+              taxes are refused by the recipient. In such cases, refunds will
+              not be provided.
+            </p>
+          </div>
+        )}
       </div>
-
       {/* Related Products */}
       <RelatedProducts category={productData.category} />
     </div>
