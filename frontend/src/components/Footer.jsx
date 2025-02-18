@@ -63,7 +63,7 @@ const Footer = () => {
         <div>
           <p className="text-xl font-medium my-5">GET IN TOUCH</p>
           <ul className="flex flex-col gap-1 text-gray-600">
-            <li>+91 9599335100</li>
+            <li>+91 9996732623</li>
             <li>
               <a
                 href="mailto:info@rohitraolabel.com"

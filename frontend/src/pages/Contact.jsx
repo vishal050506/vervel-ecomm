@@ -24,7 +24,7 @@ const Contact = () => {
           </p>
           <p className="font-semibold text-xl text-gray-600">Get In Touch!</p>
           <p className="text-gray-500">
-            Call / WhatsApp: (+91) 95993-35100
+            Call / WhatsApp: (+91) 99967 32623
             <br />
             E-mail: info@rohitraolabel.com
           </p>

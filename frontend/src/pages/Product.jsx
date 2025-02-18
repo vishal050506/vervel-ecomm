@@ -111,7 +111,7 @@ const Product = () => {
               <FaWhatsapp className="text-lg" />
               <span className="text-sm">Text or WhatsApp</span>
             </div>
-            <p className="pl-7 text-sm">+91 9599335100</p>
+            <p className="pl-7 text-sm">+91 9996732623</p>
 
             {/* Email Contact */}
             <div className="flex items-center gap-3">

@@ -2,6 +2,7 @@ import orderModel from "../model/orderModel.js";
 import userModel from "../model/userModel.js";
 import razorpay from "razorpay";
 import dotenv from "dotenv";
+import { sendSMS } from "../helpers/sendSms.js";
 dotenv.config();
 
 //global variables
@@ -133,11 +134,36 @@ const userOrders = async (req, res) => {
 const updateStatus = async (req, res) => {
   try {
     const { orderId, status } = req.body;
-    await orderModel.findByIdAndUpdate(orderId, { status });
-    res.json({ success: true, message: "Order status updated" });
+
+    // Fetch the order from the database using the orderId
+    const order = await orderModel.findById(orderId);
+
+    if (!order) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Order not found" });
+    }
+
+    // Access the phone number from the order's address
+    const phone = order.address.phone;
+
+    if (!phone) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Phone number is missing" });
+    }
+
+    // Update the order status
+    order.status = status;
+    await order.save(); // Save the updated order
+
+    // Send SMS notification based on the order status
+    await sendSMS(phone, status); // Send SMS with phone number and status
+
+    res.json({ success: true, message: "Order status updated and SMS sent" });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
