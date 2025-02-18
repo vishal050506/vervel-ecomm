@@ -52,10 +52,30 @@ const Product = () => {
         <div className="flex-1">
           <h1 className="font-medium text-2xl mt-2">{productData.name}</h1>
           <div className="flex items-center gap-1 mt-2">
-            <img className="w-3.5" src={assets.star_icon} alt="Star Icon" />
-            <img className="w-3.5" src={assets.star_icon} alt="Star Icon" />
-            <img className="w-3.5" src={assets.star_icon} alt="Star Icon" />
-            <img className="w-3.5" src={assets.star_icon} alt="Star Icon" />
+            <img
+              className="w-3.5"
+              src={assets.star_icon}
+              alt="Star Icon"
+              loading="lazy"
+            />
+            <img
+              className="w-3.5"
+              src={assets.star_icon}
+              alt="Star Icon"
+              loading="lazy"
+            />
+            <img
+              className="w-3.5"
+              src={assets.star_icon}
+              alt="Star Icon"
+              loading="lazy"
+            />
+            <img
+              className="w-3.5"
+              src={assets.star_icon}
+              alt="Star Icon"
+              loading="lazy"
+            />
             <img
               className="w-3.5"
               src={assets.star_dull_icon}

@@ -63,7 +63,7 @@ const PlaceOrder = () => {
           }
         } catch (error) {
           console.log(error);
-          toast.error(error)
+          toast.error(error);
         }
       },
     };
@@ -262,17 +262,29 @@ const PlaceOrder = () => {
                   Razorpay Secure (UPI, Cards, Wallets, NetBanking)
                 </p>
                 <div className="mt-4 md:mt-0 flex flex-wrap justify-center gap-4">
-                  <img src={assets.upi_icon} alt="UPI" className="w-8 h-8" />
-                  <img src={assets.visa_logo} alt="Visa" className="w-8 h-8" />
+                  <img
+                    src={assets.upi_icon}
+                    alt="UPI"
+                    className="w-8 h-8"
+                    loading="lazy"
+                  />
+                  <img
+                    src={assets.visa_logo}
+                    alt="Visa"
+                    className="w-8 h-8"
+                    loading="lazy"
+                  />
                   <img
                     src={assets.mastercard_logo}
                     alt="Mastercard"
                     className="w-8 h-8"
+                    loading="lazy"
                   />
                   <img
                     src={assets.bank_logo}
                     alt="NetBanking"
                     className="w-8 h-8"
+                    loading="lazy"
                   />
                   <button className="w-8 h-8 text-gray-600 border border-gray-300 rounded-full flex items-center justify-center text-sm font-semibold">
                     +1
@@ -282,7 +294,7 @@ const PlaceOrder = () => {
 
               <div className="mt-4 bg-gray-100 p-4 rounded-md flex flex-col items-center">
                 <div className="flex-shrink-0 w-12 h-12 border rounded-lg flex items-center justify-center bg-white">
-                  <img src={assets.icons_payment} alt="" />
+                  <img src={assets.icons_payment} alt="" loading="lazy" />
                 </div>
                 <p className="mt-4 text-sm text-gray-600 text-center">
                   After clicking

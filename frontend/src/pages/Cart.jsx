@@ -65,7 +65,11 @@ const Cart = () => {
   };
   const handleProceedToCheckout = () => {
     if (!isAuthenticated) {
-      toast.error("Please login first!", { position: "top-center" });
+      toast.error("Please login first!");
+    }
+    if (cartData.length === 0) {
+      toast.error("Your cart is empty!");
+      return;
     } else {
       navigate("/place-order");
     }

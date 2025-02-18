@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { assets } from "../assets/assets";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-
+  const location = useLocation();
   const { setShowSearch, getCartCount, token, setToken, navigate } =
     useContext(ShopContext);
 
@@ -42,12 +42,14 @@ const Navbar = () => {
       </ul>
 
       <div className="flex items-center gap-6">
-        <img
-          onClick={() => setShowSearch(true)}
-          src={assets.search_icon}
-          className="w-5 cursor-pointer"
-          alt=""
-        />
+        {location.pathname !== "/" && ( // Hide if on Home Screen
+          <img
+            onClick={() => setShowSearch(true)}
+            src={assets.search_icon}
+            className="w-5 cursor-pointer"
+            alt=""
+          />
+        )}
         <div className="relative group">
           <img
             onClick={() => (token ? null : navigate("/login"))}
