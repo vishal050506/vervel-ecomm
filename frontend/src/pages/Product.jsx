@@ -22,6 +22,9 @@ const Product = () => {
       setImage(product.image[0]); // Set the first image as default
     }
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     fetchProductData();
