@@ -57,7 +57,7 @@ import size_guide_image from "./size_guide_image.jpeg";
 import paypal_logo from "./paypal_logo.png";
 import logo from "./logo.png";
 import footer from "./Footer.png";
-import hero_img from "./hero_img.png";
+import hero_img from "./hero_img.webp";
 import cart_icon from "./cart_icon.png";
 import bin_icon from "./bin_icon.png";
 import dropdown_icon from "./dropdown_icon.png";
