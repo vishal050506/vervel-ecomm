@@ -66,6 +66,8 @@ const Cart = () => {
   const handleProceedToCheckout = () => {
     if (!isAuthenticated) {
       toast.error("Please login first!");
+      navigate("/login");
+      return;
     }
     if (cartData.length === 0) {
       toast.error("Your cart is empty!");

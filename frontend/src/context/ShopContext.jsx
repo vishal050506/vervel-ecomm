@@ -18,7 +18,7 @@ const ShopContextProvider = (props) => {
   const [token, setToken] = useState("");
 
   const navigate = useNavigate();
-const isAuthenticated = !!token;
+  const isAuthenticated = !!token;
   // -------------------- ✅ Fetch products from backend ----------------------
   const getProductsData = async () => {
     try {
@@ -67,10 +67,14 @@ const isAuthenticated = !!token;
       toast.error("Select Product Size");
       return;
     }
-    if (size === "CUSTOM FIT") {
-      toast.info(
-        "Custom size selected. Please provide measurements in the cart."
-      );
+    if (size) {
+      if (size === "CUSTOM FIT") {
+        toast.info(
+          "Custom size selected. Please provide measurements in the cart."
+        );
+      } else {
+        toast.success(`Size ${size} selected. Proceed to cart.`);
+      }
     }
 
     setCartItems((prevCart) => {
@@ -168,7 +172,7 @@ const isAuthenticated = !!token;
     token,
     setToken,
     setCartItems,
-    isAuthenticated
+    isAuthenticated,
   };
 
   return (
