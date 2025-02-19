@@ -44,11 +44,17 @@ const Product = () => {
                 onClick={() => setImage(img)}
                 className="w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer"
                 alt={`Product image ${index + 1}`}
+                loading="lazy"
               />
             ))}
           </div>
           <div className="w-full sm:w-[80%]">
-            <img className="w-full h-auto" src={image} alt="Selected product" />
+            <img
+              className="w-full h-auto"
+              src={image}
+              alt="Selected product"
+              loading="lazy"
+            />
           </div>
         </div>
         {/* Product Info */}
@@ -83,6 +89,7 @@ const Product = () => {
               className="w-3.5"
               src={assets.star_dull_icon}
               alt="Dull Star Icon"
+              loading="lazy"
             />
             {/* <p className="pl-2">(122)</p> */}
           </div>

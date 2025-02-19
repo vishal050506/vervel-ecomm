@@ -15,6 +15,7 @@ const About = () => {
           src={assets.about_img}
           className="w-full md:max-w-[480px]"
           alt=""
+          loading="lazy"
         />
         <div className="flex flex-col justify-center gap-6 md:w-2/4 text-gray-600">
           <p>

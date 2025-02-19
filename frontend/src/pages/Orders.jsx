@@ -67,7 +67,12 @@ const Orders = () => {
           >
             <div className="flex items-start gap-6 text-sm">
               <Link to={`/product/${item._id}`}>
-                <img src={item.image[0]} className="w-16 sm:w-20" alt="" />
+                <img
+                  src={item.image[0]}
+                  className="w-16 sm:w-20"
+                  alt=""
+                  loading="lazy"
+                />
               </Link>
               <div>
                 <p className="text-base font-medium">{item.name}</p>

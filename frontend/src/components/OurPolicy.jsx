@@ -18,6 +18,7 @@ const OurPolicy = () => {
             src={assets.Globe}
             alt="exchange-icon"
             className="w-12 m-auto mb-5"
+            loading="lazy"
           />
           <p className="font-semibold">World Wide Delivery</p>
           <p className="text-gray-400">Delivering across the world.</p>
@@ -27,6 +28,7 @@ const OurPolicy = () => {
             src={assets.quality_icon}
             alt="exchange-icon"
             className="w-12 m-auto mb-5"
+            loading="lazy"
           />
           <p className="font-semibold">Alteration Applicable</p>
           <p className="text-gray-400">Easy Alteration, Guaranteed Fit.</p>
@@ -36,6 +38,7 @@ const OurPolicy = () => {
             src={assets.support_img}
             alt="exchange-icon"
             className="w-12 m-auto mb-5"
+            loading="lazy"
           />
           <p className="font-semibold">Best Customer Support</p>
           <p className="text-gray-400">Six days support</p>

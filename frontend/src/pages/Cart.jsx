@@ -109,6 +109,7 @@ const Cart = () => {
                       className="w-16 sm:w-20"
                       src={productData.image[0]}
                       alt={productData.name}
+                      loading="lazy"
                     />
                   </Link>
 
@@ -147,6 +148,7 @@ const Cart = () => {
                   src={assets.bin_icon}
                   alt="Bin icon"
                   onClick={() => updateQuantity(item._id, item.size, 0)}
+                  loading="lazy"
                 />
               </div>
             );

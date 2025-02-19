@@ -9,7 +9,12 @@ const Footer = () => {
       <div className="sm:grid grid-cols-4 gap-14 my-10 mt-30 text-sm">
         {/* About Section */}
         <div>
-          <img src={assets.footer} className="mb-5 w-32" alt="footer_img" />
+          <img
+            src={assets.footer}
+            className="mb-5 w-32"
+            alt="footer_img"
+            loading="lazy"
+          />
           <p className="text-gray-600">
             At Rohit Rao, we believe in weaving dreams into reality with
             handcrafted elegance. Founded by Muskan, a zoology enthusiast, and

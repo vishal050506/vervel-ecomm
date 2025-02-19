@@ -19,6 +19,7 @@ const Navbar = () => {
         <img
           src={assets.logo}
           className="w-20 cursor-pointer"
+          loading="lazy"
           // style={{ height: "11vh" }}
         />
       </Link>
@@ -47,7 +48,8 @@ const Navbar = () => {
             onClick={() => setShowSearch(true)}
             src={assets.search_icon}
             className="w-5 cursor-pointer"
-            alt=""
+            alt="search icon"
+            loading="lazy"
           />
         )}
         <div className="relative group">
@@ -56,6 +58,7 @@ const Navbar = () => {
             src={assets.profile_icon}
             className="w-5 cursor-pointer"
             alt="Profile"
+            loading="lazy"
           />
           {/* Dropdown */}
 
@@ -88,7 +91,8 @@ const Navbar = () => {
           onClick={() => setVisible(true)}
           src={assets.menu_icon}
           className="w-5 cursor-pointer sm:hidden"
-          alt=""
+          alt="mennu_icon"
+          loading="lazy"
         />
       </div>
       {/* Side bar menu for smaller screen  */}
@@ -107,6 +111,7 @@ const Navbar = () => {
               src={assets.dropdown_icon}
               alt="Dropdown"
               className="h-4 rotate-180"
+              loading="lazy"
             />
             <p>Back</p>
           </div>

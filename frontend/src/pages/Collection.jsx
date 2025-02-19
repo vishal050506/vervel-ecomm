@@ -73,6 +73,7 @@ const Collection = () => {
             src={assets.dropdown_icon}
             alt="filters dropdown"
             className={`h-3 sm:hidden ${showFilter ? "rotate-90" : ""}`}
+            loading="lazy"
           />
         </p>
 
